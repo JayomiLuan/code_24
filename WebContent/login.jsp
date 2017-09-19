@@ -11,7 +11,7 @@
 	<form action="${pageContext.request.contextPath }/loginServlet" method="post">
 		<table align="center">
 			<tr>
-				<td colspan="2">${errMsg }</td>
+				<td colspan="2" style="color: red;font-size: small">${errMsg }</td>
 			</tr>
 			<tr>
 				<td>用户名：</td>

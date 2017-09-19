@@ -1,18 +1,16 @@
 package cn.day24.servlet;
 
-import java.io.IOException;
+import cn.day24.domain.User;
+import cn.day24.service.UserService;
+import cn.day24.service.impl.UserServiceImpl;
+import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import cn.day24.domain.User;
-import org.apache.commons.beanutils.BeanUtils;
-
-import cn.day24.service.UserService;
-import cn.day24.service.impl.UserServiceImpl;
+import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
 

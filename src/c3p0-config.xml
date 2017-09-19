@@ -6,6 +6,5 @@
 		<property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/day24</property>
 		<property name="user">root</property>
 		<property name="password">root</property>
-
 	</default-config>
 </c3p0-config>

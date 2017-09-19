@@ -16,7 +16,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public User get(String id) throws Exception {
 		Connection conn = JdbcUtils.getConnection();
-		String sql = "select id,name,password from tb_user where id=?";
+		String sql = "select id,name,password from tb_user where id= ?";
 		User user = queryRunner.query(conn, sql, new BeanHandler<>( User.class ) , id);
 		
 		return user;
