@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" metadata-complete="true" version="3.0">
+
+	<!-- 配置第一个测试用的过滤器 ,过滤器的执行顺序与在此处的配置顺序一致-->
+<!-- 	<filter>
+		<filter-name>hi</filter-name>
+		<filter-class>HiFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>hi</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>hello</filter-name>
+		<filter-class>HelloFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>hello</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+ -->
+ 	<!-- 负责登录的Servlet -->
+ 	<servlet>
+ 		<servlet-name>login</servlet-name>
+ 		<servlet-class>cn.day24.servlet.LoginServlet</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>login</servlet-name>
+ 		<url-pattern>/loginServlet</url-pattern>
+ 	</servlet-mapping>
+	
+	<!-- 自动登录功能的过滤器 -->
+	<filter>
+		<filter-name>autoLogin</filter-name>
+		<filter-class>cn.day24.filter.AutoLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>autoLogin</filter-name>
+		<url-pattern>/*</url-pattern>	
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>encoding</servlet-name>
+		<servlet-class>cn.day24.servlet.EncodeTestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>encoding</servlet-name>
+		<url-pattern>/encodingServlet</url-pattern>	
+	</servlet-mapping>
+	
+	<!-- 解决中文乱码的过滤器 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>cn.day24.filter.EncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>	
+	</filter-mapping>
+	
+	
+	
+</web-app>
